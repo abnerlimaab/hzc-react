@@ -41,7 +41,7 @@ const MenuItem = styled.a`
     `}
 `;
 
-const MenuLateral = ({ showMenuLateral }) => {
+const MenuLateral = ({ showMenuLateral, setShowMenuLateral}) => {
 
     const [itemAtivo, setItemAtivo] = useState("Inicio");
 
@@ -86,6 +86,7 @@ const MenuLateral = ({ showMenuLateral }) => {
                 <MenuItem 
                     onClick={(e) => {
                         setItemAtivo(e.target.innerHTML)
+                        setShowMenuLateral(!showMenuLateral)
                     }}
                     key={index} 
                     icone={menuItem.icone} 

@@ -55,7 +55,7 @@ const Cabecalho = () => {
             <CabecalhoLogo src={logotipo.src} alt={logotipo.alt}/>
             <BotaoNotificacao aria-label='Notificação'><i></i></BotaoNotificacao>
         </CabecalhoStyled>
-        <MenuLateral showMenuLateral={statusMenuLateral}/>        
+        <MenuLateral showMenuLateral={statusMenuLateral} setShowMenuLateral={setShowMenuLateral.bind(this)}/>        
         </>
     )
 };
