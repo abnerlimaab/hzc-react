@@ -8,12 +8,14 @@ const Menu = styled.nav`
     background-color: ${cores.menuLateral};
     width: 75vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
+    left: 0;
 `;
 
 const Blur = styled(Menu)`
     width: 25vw;
-    position: absolute;
+    position: fixed;
+    width: 75vw;
     left: 75vw;
     background: transparent;
     backdrop-filter: blur(30px);
@@ -89,7 +91,9 @@ const MenuLateral = ({ showMenuLateral, setShowMenuLateral}) => {
 
     return showMenuLateral && (
         <Menu>
-            <Blur></Blur>
+            <Blur
+                onClick={() => setShowMenuLateral(!showMenuLateral)}
+            ></Blur>
             <Logo src={logotipo.src} alt={logotipo.alt}/>
             {links.map((menuItem, index) => {
                 return (

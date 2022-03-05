@@ -6,6 +6,7 @@ const Container = styled.main`
     padding: 24px 16px;
     display: grid;
     gap: 16px;
+    padding-top: 9vh;
 `;
 
 const Titulo = styled.h2`

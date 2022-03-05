@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import MenuLateral from '../MenuLateral/index.jsx';
 import { cores, sombra, icones, logotipo } from '../UI/variaveis.js'
 
+const Container = styled.div`
+    position: fixed;
+    width: 100vw;
+    margin-bottom: 5vh;
+`;
+
 const CabecalhoStyled = styled.header`
     display: flex;
     justify-content: space-between;
@@ -43,7 +49,7 @@ const Cabecalho = () => {
     const [statusMenuLateral, setShowMenuLateral] = useState(false);
 
     return(
-        <>
+        <Container>
         <CabecalhoStyled>
             <BotaoMenu 
             aria-label='Menu' 
@@ -56,7 +62,7 @@ const Cabecalho = () => {
             <BotaoNotificacao aria-label='Notificação'><i></i></BotaoNotificacao>
         </CabecalhoStyled>
         <MenuLateral showMenuLateral={statusMenuLateral} setShowMenuLateral={setShowMenuLateral.bind(this)}/>        
-        </>
+        </Container>
     )
 };
 
