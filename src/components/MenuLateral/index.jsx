@@ -8,6 +8,15 @@ const Menu = styled.nav`
     background-color: ${cores.menuLateral};
     width: 75vw;
     height: 100vh;
+    position: absolute;
+`;
+
+const Blur = styled(Menu)`
+    width: 25vw;
+    position: absolute;
+    left: 75vw;
+    background: transparent;
+    backdrop-filter: blur(30px);
 `;
 
 const Logo = styled.img`
@@ -80,6 +89,7 @@ const MenuLateral = ({ showMenuLateral, setShowMenuLateral}) => {
 
     return showMenuLateral && (
         <Menu>
+            <Blur></Blur>
             <Logo src={logotipo.src} alt={logotipo.alt}/>
             {links.map((menuItem, index) => {
                 return (
