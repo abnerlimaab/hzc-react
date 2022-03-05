@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Guia de estilos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Toda a estilização que será usada no projeto dentro do figma.
 
-## Available Scripts
+[Link do projeto no figma](https://www.figma.com/file/ibWktwVpnog76rMYOdVhks/Dispondo-elementos-com-flexbox-e-grid?node-id=54%3A2358)
 
-In the project directory, you can run:
+## Fonte
 
-### `npm start`
+```html
+Open Sans:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Cores
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+corpo: `#1D232A`
 
-### `npm test`
+cabeçalho: `#1D232A`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+cabeçalho mobile: `#15191C`
 
-### `npm run build`
+menu lateral: `#15191C`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cartão: `#2C343A`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+fonte: `#FFFFFF`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+fonte alternativa: `#95999C`
 
-### `npm run eject`
+links: `#0480DC`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+botão: `#0480DC`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+sombras: `0px 4px 4px rgba(0, 0, 0, 0.16)`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Ícones
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Estão dentro do arquivo de fonte `icones.ttf`. Para usar, primeiro importe a fonte no projeto usando `@font-face` e depois utilize os códigos abaixo para exibir o ícone.
 
-## Learn More
+```css
+@font-face {
+    font-family: 'icones';
+    src: url(../font/icones.ttf);
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> Cuidado com a localização do arquivo `icones.ttf`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Camisas = `\e900`
 
-### Code Splitting
+Carrinho = `\e901`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Inicio = `\e902`
 
-### Analyzing the Bundle Size
+Integrantes = `\e903`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Menu = `\e904`
 
-### Making a Progressive Web App
+Moeda = `\e905`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Notificação = `\e906`
 
-### Advanced Configuration
+Pico = `\e908`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Picos = `\e909`
 
-### Deployment
+Pinturas = `\e90a`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Play = `\e90b`
 
-### `npm run build` fails to minify
+Relogio = `\e90c`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Seta-baixo = `\e90d`
+
+Videos = `\e90e`
+
+Visualizacao = `\e90f`
+
+## Espaçamentos
+
+Espaço interno botão: `8px`
+
+Espaço entre elementos do botão: `8px`
+
+Espaço entre elementos: `16px /8px`
+
+Espaçamento interno do corpo: `16px`
+
+Espaçamento entre o título do cartão de recentes e seus itens: `24px`
+
+## Tamanhos
+
+Tamanho do dispositivo mobile: `360px`
+
+Tamanho do dispositivo desktop: `1440px`
+
+Largura máxima do conteúdo principal: `1120px`
+
+Largura máxima de um cartão desktop: `256px`
+
+Altura mínima de um cartão: `320px`
