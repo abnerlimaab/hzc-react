@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { logotipo, cores, icones } from '../UI/variaveis';
 
@@ -26,55 +26,73 @@ const MenuItem = styled.a`
 
     &:before {
         font-family: "Icones" !important;
-        content: "${(props) => (props.icone)}";
+        content: "${({icone}) => (icone)}";
         width: 24px;
         height: 24px;
         font-size: 24px;
         position: absolute;
         left: 24px;
     };
+
+    ${({ativo}) => ativo && `
+        color: ${cores.fonte};
+        padding-left: 56px;
+        border-left: 8px solid ${cores.fonte}
+    `}
 `;
 
-const MenuLateral = () => {
+const MenuLateral = ({ showMenuLateral }) => {
+
+    const [itemAtivo, setItemAtivo] = useState("Inicio");
 
     const links = [
         {
             url: '#',
             texto: 'Inicio',
-            icone: icones.inicio
+            icone: icones.inicio,
         },
         {
             url: '#',
             texto: 'Vdeos',
-            icone: icones.videos
+            icone: icones.videos,
         },
         {
             url: '#',
             texto: 'Picos',
-            icone: icones.picos
+            icone: icones.picos,
         },
         {
             url: '#',
             texto: 'Integrantes',
-            icone: icones.integrantes
+            icone: icones.integrantes,
         },
         {
             url: '#',
             texto: 'Camisas',
-            icone: icones.camisas
+            icone: icones.camisas,
         },
         {
             url: '#',
             texto: 'Pinturas',
-            icone: icones.pinturas
+            icone: icones.pinturas,
         },
     ]
 
-    return(
+    return showMenuLateral && (
         <Menu>
             <Logo src={logotipo.src} alt={logotipo.alt}/>
             {links.map((menuItem, index) => {
-                return <MenuItem key={index} icone={menuItem.icone} href={menuItem.url}>{menuItem.texto}</MenuItem>;
+                return (
+                <MenuItem 
+                    onClick={(e) => {
+                        setItemAtivo(e.target.innerHTML)
+                    }}
+                    key={index} 
+                    icone={menuItem.icone} 
+                    ativo={itemAtivo === menuItem.texto} 
+                    href={menuItem.url}>
+                    {menuItem.texto}    
+                </MenuItem>);
             })}
         </Menu>
     )

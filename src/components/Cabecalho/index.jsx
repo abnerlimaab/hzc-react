@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import MenuLateral from '../MenuLateral/index.jsx';
 import { cores, sombra, icones, logotipo } from '../UI/variaveis.js'
 
 const CabecalhoStyled = styled.header`
@@ -8,7 +9,7 @@ const CabecalhoStyled = styled.header`
     align-items: center;
     padding: 8px 16px;
     box-shadow: ${sombra};
-    background-color: ${cores.cabecalho};
+    background-color: ${cores.cabecalhoMobile};
 `;
 
 const CabecalhoLogo = styled.img`
@@ -16,7 +17,7 @@ const CabecalhoLogo = styled.img`
 `;
 
 const Botao = styled.button`
-    background-color: ${cores.corpo};
+    background-color: ${cores.cabecalhoMobile};
     color: ${cores.fonte};
     border: none;
 `;
@@ -38,12 +39,24 @@ const BotaoNotificacao = styled(Botao)`
 `
 
 const Cabecalho = () => {
+
+    const [statusMenuLateral, setShowMenuLateral] = useState(false);
+
     return(
+        <>
         <CabecalhoStyled>
-            <BotaoMenu aria-label='Menu'><i></i></BotaoMenu>
+            <BotaoMenu 
+            aria-label='Menu' 
+            onClick={() => {
+                setShowMenuLateral(!statusMenuLateral)
+            }}>
+                <i></i>
+            </BotaoMenu>
             <CabecalhoLogo src={logotipo.src} alt={logotipo.alt}/>
             <BotaoNotificacao aria-label='Notificação'><i></i></BotaoNotificacao>
         </CabecalhoStyled>
+        <MenuLateral showMenuLateral={statusMenuLateral}/>        
+        </>
     )
 };
 
