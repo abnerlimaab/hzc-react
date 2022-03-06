@@ -20,17 +20,30 @@ const Container = styled.main`
 
 const Titulo = styled.h2`
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 700;    
+
+    @media screen and (min-width: 1440px) {
+        grid-column: span 3;
+    }
 `;
 
 const Secao = styled.section`
     display: grid;
-    gap: 16px;
+    
+    @media screen and (min-width: 1440px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column: 1 / span 3;
+        gap: 16px;
+    }
 `;
 
 const TituloSecao = styled.h3`
     font-size: 1.2rem;
     font-weight: 700;
+
+    @media screen and (min-width: 1440px) {
+        grid-column: 1 / span 4;
+    }
 `;
 
 const Inicio = () => {
@@ -38,9 +51,11 @@ const Inicio = () => {
         <Container>
             <Titulo>Inicio</Titulo>
             <CartaoDestaque/>
-            <CartaoRecentes/>
+            <CartaoRecentes/> 
             <Secao>
                 <TituloSecao>Vídeos mais vistos</TituloSecao>
+                <Cartao/>
+                <Cartao/>
                 <Cartao/>
                 <Cartao/>
             </Secao>

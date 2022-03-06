@@ -8,6 +8,7 @@ const Container = styled.article`
     border-radius: 15px;
     overflow: hidden;
     background-color: ${cores.cartao};
+    margin: 1rem 0;
 `;
 
 const Imagem = styled.img`

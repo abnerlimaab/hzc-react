@@ -8,11 +8,19 @@ const Container = styled.article`
     border-radius: 15px;
     overflow: hidden;
     background-color: ${cores.cartao};
-        margin-bottom: 16px;
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 1440px) {
+        grid-column: 1 / span 2;
+    }
 `;
 
 const Imagem = styled.img`
     width: 100%;
+
+    @media screen and (min-width: 1440px) {
+        max-height: 50vh;
+    }
 `;
 
 const Conteudo = styled.div`
