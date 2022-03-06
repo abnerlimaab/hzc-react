@@ -8,6 +8,7 @@ const Container = styled.article`
     border-radius: 15px;
     overflow: hidden;
     background-color: ${cores.cartao};
+        margin-bottom: 16px;
 `;
 
 const Imagem = styled.img`
@@ -19,6 +20,10 @@ const Conteudo = styled.div`
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 8px;
+`;
+
+const Destaque = styled.p`
+    grid-column: span 2;
 `;
 
 const Titulo = styled.h3`
@@ -46,6 +51,13 @@ const Tempo = styled(Info)`
     }
 `;
 
+const Visualizacao = styled(Info)`
+    &::before{
+        content: "${icones.visualizacao}";
+        margin-right: 8px;
+    }
+`;
+
 const Botao = styled.button`
     display: flex;
     justify-content: center;
@@ -55,33 +67,43 @@ const Botao = styled.button`
     border-radius: 18px;
     font-size: 0.9rem; 
     justify-self: flex-end;
+    width: 100%;
+    grid-column: span 2;
 
     & i::before{
+        margin-right: 8px;
         content: "${icones.play}";
         font-size: 24px;
     }
 `;
 
-const Cartao = () => {
+const CartaoDestaque = () => {
     return (
         <Container>
             <Imagem src={bannerMobile} alt="Banner do cartão" />
             <Conteudo>
-                <Perfil>
-                    Bruno Lopez
-                </Perfil>
+                <Destaque>
+                    Vídeo em destaque
+                </Destaque>
                 <Titulo>
                     HZC - Título
                 </Titulo>
+                <Perfil>
+                    Bruno Lopez
+                </Perfil>
                 <Tempo>
                     33 minutos
                 </Tempo>
-                <Botao aria-label="Assistir agora">
+                <Visualizacao>
+                    33 visualizações
+                </Visualizacao>
+                <Botao>
                     <i></i>
+                    Assistir agora"
                 </Botao>
             </Conteudo>
         </Container>
     );
 }
 
-export default Cartao;
+export default CartaoDestaque;

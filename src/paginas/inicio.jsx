@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Cartao from '../components/Cartao/Cartao';
+import CartaoDestaque from '../components/Cartao/CartaoDestaque';
 
 const Container = styled.main`
     padding: 24px 16px;
@@ -28,11 +29,11 @@ const Inicio = () => {
     return (
         <Container>
             <Titulo>Inicio</Titulo>
-            <Cartao destaque={true}/>
+            <CartaoDestaque/>
             <Secao>
                 <TituloSecao>Vídeos mais vistos</TituloSecao>
-                <Cartao destaque={false}/>
-                <Cartao destaque={false}/>
+                <Cartao/>
+                <Cartao/>
             </Secao>
         </Container>
     )
