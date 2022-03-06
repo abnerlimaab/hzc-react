@@ -7,18 +7,33 @@ const Menu = styled.nav`
     flex-direction: column;
     background-color: ${cores.menuLateral};
     width: 75vw;
-    height: 100vh;
-    position: fixed;
+    height: 95vh;
+    margin-top: 5vh;
     left: 0;
+
+    @media screen and (max-width: 1439px) {
+        ${({showMenuLateral}) => showMenuLateral && `display: none`}
+    }
+
+    @media screen and (min-width: 1440px) {
+        height: 100vh;
+        margin-top: 0;
+        width: 200px;
+    }
 `;
 
 const Blur = styled(Menu)`
-    width: 25vw;
     position: fixed;
-    width: 75vw;
+    top: 0;
     left: 75vw;
+    width: 25vw;
+    height: 95vh;
     background: transparent;
     backdrop-filter: blur(30px);
+
+    @media screen and (min-width: 1440px) {
+        display: none;
+    }
 `;
 
 const Logo = styled.img`
@@ -89,8 +104,10 @@ const MenuLateral = ({ showMenuLateral, setShowMenuLateral}) => {
         },
     ]
 
-    return showMenuLateral && (
-        <Menu>
+    return (
+        <Menu 
+            showMenuLateral={showMenuLateral}
+            >
             <Blur
                 onClick={() => setShowMenuLateral(!showMenuLateral)}
             ></Blur>

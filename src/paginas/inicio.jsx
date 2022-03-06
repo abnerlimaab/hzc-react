@@ -9,6 +9,13 @@ const Container = styled.main`
     display: grid;
     gap: 16px;
     padding-top: 9vh;
+
+    @media screen and (min-width: 1440px) {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        column-gap: 32px;
+        padding: 16px 60px;
+    }
 `;
 
 const Titulo = styled.h2`
@@ -31,6 +38,7 @@ const Inicio = () => {
         <Container>
             <Titulo>Inicio</Titulo>
             <CartaoDestaque/>
+            <CartaoRecentes/>
             <Secao>
                 <TituloSecao>Vídeos mais vistos</TituloSecao>
                 <Cartao/>
