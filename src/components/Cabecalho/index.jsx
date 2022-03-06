@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import MenuLateral from '../MenuLateral/index.jsx';
 import { cores, sombra, icones, logotipo } from '../UI/variaveis.js'
 
-const Container = styled.div`
+const Header = styled.header`
     position: fixed;
     width: 100vw;
     margin-bottom: 5vh;
 `;
 
-const CabecalhoStyled = styled.header`
+const CabecalhoStyled = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,6 +21,8 @@ const CabecalhoStyled = styled.header`
 const CabecalhoLogo = styled.img`
     width: 40px;
 `;
+
+const Perfil = styled.p``;
 
 const Botao = styled.button`
     background-color: ${cores.cabecalhoMobile};
@@ -49,7 +51,7 @@ const Cabecalho = () => {
     const [statusMenuLateral, setShowMenuLateral] = useState(false);
 
     return(
-        <Container>
+        <Header>
         <CabecalhoStyled>
             <BotaoMenu 
             aria-label='Menu' 
@@ -58,11 +60,14 @@ const Cabecalho = () => {
             }}>
                 <i></i>
             </BotaoMenu>
+            <Perfil>
+                Bruno Lopez
+            </Perfil>
             <CabecalhoLogo src={logotipo.src} alt={logotipo.alt}/>
             <BotaoNotificacao aria-label='Notificação'><i></i></BotaoNotificacao>
         </CabecalhoStyled>
         <MenuLateral showMenuLateral={statusMenuLateral} setShowMenuLateral={setShowMenuLateral.bind(this)}/>        
-        </Container>
+        </Header>
     )
 };
 

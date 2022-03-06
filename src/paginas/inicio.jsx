@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Cartao from '../components/Cartao/Cartao';
 import CartaoDestaque from '../components/Cartao/CartaoDestaque';
+import CartaoRecentes from '../components/Cartao/CartaoRecentes';
 
 const Container = styled.main`
     padding: 24px 16px;
@@ -35,6 +36,7 @@ const Inicio = () => {
                 <Cartao/>
                 <Cartao/>
             </Secao>
+            <CartaoRecentes/>
         </Container>
     )
 }
